@@ -296,6 +296,77 @@ body {
   box-shadow: none;
 }
 
+.basic-paper-panel {
+  box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--ink) 7%, transparent);
+}
+
+.basic-identity-cover {
+  box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--sidebar-ink) 9%, transparent);
+}
+
+.basic-identity-grid {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.58;
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--sidebar-ink) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--sidebar-ink) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+  mask-image: linear-gradient(105deg, transparent 12%, #000 58%, #000 100%);
+}
+
+.basic-cover-action {
+  border: 1px solid color-mix(in oklab, var(--sidebar-ink) 18%, transparent);
+  background-color: var(--sidebar-active);
+  box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--sidebar-ink) 10%, transparent);
+}
+
+.basic-cover-action:hover,
+.basic-cover-action[data-hovered] {
+  background-color: var(--sidebar-hover);
+  box-shadow: none;
+}
+
+.basic-dossier-tabs {
+  overflow: visible;
+}
+
+.basic-dossier-tabs [role='tablist'] {
+  margin: 1rem 1.25rem 0;
+  padding: 0.25rem;
+  border: 1px solid var(--hairline);
+  border-radius: 0.375rem;
+  background: var(--surface-alt);
+  box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--ink) 6%, transparent);
+}
+
+.basic-dossier-tabs [role='tab'] {
+  min-height: 2.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.basic-dossier-tabs [role='tab'][data-selected] {
+  background: var(--surface);
+  box-shadow: var(--shadow-raised);
+}
+
+.basic-dossier-tabs [role='tabpanel'] {
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .basic-dossier-tabs [role='tablist'] {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+}
+
 .login-panel {
   border-color: var(--hairline);
   border-radius: 0.375rem;
